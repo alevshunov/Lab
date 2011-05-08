@@ -34,6 +34,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NHibernate">
+      <HintPath>..\..\Lib\NHibernate\NHibernate.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web.WebPages" />
     <Reference Include="System.Web.Helpers" />
@@ -62,6 +65,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SessionManagement\BaseSessionWrapper.cs" />
+    <Compile Include="SessionManagement\ISessionWrapper.cs" />
+    <Compile Include="SessionManagement\SessionWrapper.cs" />
+    <Compile Include="SessionManagement\StatelessSessionWrapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
