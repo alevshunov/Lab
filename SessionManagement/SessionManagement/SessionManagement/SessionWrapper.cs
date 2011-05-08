@@ -4,8 +4,7 @@ namespace SessionManagement.SessionManagement
 {
 	public class SessionWrapper : BaseSessionWrapper<ISession>
 	{
-		public SessionWrapper(ISessionFactory sessionFactory)
-			: base(sessionFactory)
+		public SessionWrapper(ISessionFactory sessionFactory, IContextObserver contextObserver) : base(sessionFactory, contextObserver)
 		{
 		}
 

@@ -5,7 +5,7 @@ namespace SessionManagement.SessionManagement
 {
 	public class StatelessSessionWrapper : BaseSessionWrapper<IStatelessSession>
 	{
-		public StatelessSessionWrapper(ISessionFactory sessionFactory) : base(sessionFactory)
+		public StatelessSessionWrapper(ISessionFactory sessionFactory, IContextObserver contextObserver) : base(sessionFactory, contextObserver)
 		{
 		}
 
