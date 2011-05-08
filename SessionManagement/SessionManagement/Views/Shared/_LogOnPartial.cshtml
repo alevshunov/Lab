@@ -1,3 +1,8 @@
-﻿@if(Request.IsAuthenticated) {
-    <text>Welcome <b>@Context.User.Identity.Name</b>!</text>
+﻿@if (Request.IsAuthenticated)
+{
+	<text>Welcome <b>@Context.User.Identity.Name</b>!</text>
+}
+else
+{
+	<text>Hello, good guy</text>
 }

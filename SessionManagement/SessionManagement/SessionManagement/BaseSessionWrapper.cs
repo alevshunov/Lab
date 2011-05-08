@@ -6,17 +6,21 @@ namespace SessionManagement.SessionManagement
 	public abstract class BaseSessionWrapper<TSession> : ISessionWrapper<TSession>
 		where TSession : class, IDisposable
 	{
+		private readonly IContextObserver contextObserver;
 		private readonly ISessionFactory sessionFactory;
 		private bool disposed;
 		private TSession session;
 		private ITransaction transaction;
 
-		protected BaseSessionWrapper(ISessionFactory sessionFactory)
+		protected BaseSessionWrapper(ISessionFactory sessionFactory, IContextObserver contextObserver)
 		{
 			if(sessionFactory == null)
 				throw new ArgumentNullException("sessionFactory");
+			if(contextObserver == null)
+				throw new ArgumentNullException("contextObserver");
 
 			this.sessionFactory = sessionFactory;
+			this.contextObserver = contextObserver;
 		}
 
 		public TSession Session
@@ -51,7 +55,10 @@ namespace SessionManagement.SessionManagement
 
 			try
 			{
-				transaction.Commit();
+				if(CanCommit())
+					transaction.Commit();
+				else
+					transaction.Rollback();
 			}
 			catch
 			{
@@ -71,5 +78,10 @@ namespace SessionManagement.SessionManagement
 
 		protected abstract TSession OpenSession();
 		protected abstract ITransaction BeginTransaction(TSession session);
+
+		private bool CanCommit()
+		{
+			return contextObserver.IsCommitAllowed();
+		}
 	}
 }
