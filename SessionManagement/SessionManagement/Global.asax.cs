@@ -2,11 +2,32 @@
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Castle.Windsor;
+using SessionManagement.IoC;
 
 namespace SessionManagement
 {
-	public class MvcApplication : HttpApplication
+	public class MvcApplication : HttpApplication, IContainerAccessor
 	{
+		private readonly object lockObject = new object();
+		private IWindsorContainer container;
+
+		public IWindsorContainer Container
+		{
+			get
+			{
+				if(container != null)
+					return container;
+
+				lock (lockObject)
+				{
+					if(container == null)
+						container = new WebAppContainer();
+				}
+				return container;
+			}
+		}
+
 		public static void RegisterGlobalFilters(GlobalFilterCollection filters)
 		{
 			filters.Add(new HandleErrorAttribute());
@@ -27,6 +48,8 @@ namespace SessionManagement
 
 			RegisterGlobalFilters(GlobalFilters.Filters);
 			RegisterRoutes(RouteTable.Routes);
+
+			ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory(Container));
 		}
 	}
 }
