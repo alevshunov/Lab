@@ -1,4 +1,4 @@
-namespace SessionManagement.SessionManagement
+namespace Example.Web.SessionManagement
 {
 	public interface IContextObserver
 	{

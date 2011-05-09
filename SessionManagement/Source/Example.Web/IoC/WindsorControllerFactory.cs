@@ -1,12 +1,12 @@
-﻿using System;
+using System;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
-using SessionManagement.Controllers;
+using Example.Web.Controllers;
 
-namespace SessionManagement.IoC
+namespace Example.Web.IoC
 {
 	public class WindsorControllerFactory : DefaultControllerFactory
 	{

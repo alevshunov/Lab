@@ -1,11 +1,11 @@
-﻿using System;
+using System;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Castle.Windsor;
-using SessionManagement.IoC;
+using Example.Web.IoC;
 
-namespace SessionManagement
+namespace Example.Web
 {
 	public class MvcApplication : HttpApplication, IContainerAccessor
 	{
@@ -36,6 +36,7 @@ namespace SessionManagement
 		public static void RegisterRoutes(RouteCollection routes)
 		{
 			routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+			routes.IgnoreRoute("favicon.ico");
 
 			routes.MapRoute("Default",
 			                "{controller}/{action}/{id}",

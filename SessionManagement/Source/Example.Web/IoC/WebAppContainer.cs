@@ -1,7 +1,7 @@
 using Castle.Windsor;
 using Castle.Windsor.Installer;
 
-namespace SessionManagement.IoC
+namespace Example.Web.IoC
 {
 	public class WebAppContainer : WindsorContainer
 	{

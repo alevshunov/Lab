@@ -1,7 +1,7 @@
 using System.Linq;
 using System.Web;
 
-namespace SessionManagement.SessionManagement
+namespace Example.Web.SessionManagement
 {
 	public class HttpContextObserver : IContextObserver
 	{

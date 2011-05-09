@@ -1,6 +1,6 @@
-﻿using NHibernate;
+using NHibernate;
 
-namespace SessionManagement.SessionManagement
+namespace Example.Web.SessionManagement
 {
 	public class SessionWrapper : BaseSessionWrapper<ISession>
 	{

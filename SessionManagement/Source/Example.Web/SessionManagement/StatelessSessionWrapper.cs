@@ -1,7 +1,7 @@
-﻿using System;
+using System;
 using NHibernate;
 
-namespace SessionManagement.SessionManagement
+namespace Example.Web.SessionManagement
 {
 	public class StatelessSessionWrapper : BaseSessionWrapper<IStatelessSession>
 	{

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SessionManagement", "SessionManagement\SessionManagement.csproj", "{EB94971B-BD15-4B2F-96BB-F8F6B03B4CDC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Web", "Source\Example.Web\Example.Web.csproj", "{EB94971B-BD15-4B2F-96BB-F8F6B03B4CDC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

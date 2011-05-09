@@ -1,6 +1,6 @@
-﻿using System;
+using System;
 
-namespace SessionManagement.SessionManagement
+namespace Example.Web.SessionManagement
 {
 	public interface ISessionWrapper<out TSession> : IDisposable
 	{

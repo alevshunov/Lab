@@ -1,6 +1,6 @@
 using NHibernate.Cfg;
 
-namespace SessionManagement.SessionManagement
+namespace Example.Web.SessionManagement
 {
 	public class MyNHibernateInitializer : INHibernateInitializer
 	{

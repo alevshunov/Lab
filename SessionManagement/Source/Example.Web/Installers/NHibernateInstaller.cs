@@ -3,10 +3,10 @@ using Castle.Core;
 using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
+using Example.Web.SessionManagement;
 using NHibernate;
-using SessionManagement.SessionManagement;
 
-namespace SessionManagement.Installers
+namespace Example.Web.Installers
 {
 	public class NHibernateInstaller : IWindsorInstaller
 	{
@@ -16,9 +16,10 @@ namespace SessionManagement.Installers
 			                   	.ImplementedBy<SessionWrapper>().LifeStyle.PerWebRequest);
 
 			container.Register(Component.For<INHibernateInitializer>().ImplementedBy<MyNHibernateInitializer>());
-			container.Register(Component.For<ISessionFactory>().UsingFactoryMethod(x => x.Resolve<INHibernateInitializer>()
-			                                                                            	.GetConfiguration()
-			                                                                            	.BuildSessionFactory())
+			container.Register(Component.For<ISessionFactory>()
+			                   	.UsingFactoryMethod(x => x.Resolve<INHibernateInitializer>()
+			                   	                         	.GetConfiguration()
+			                   	                         	.BuildSessionFactory())
 			                   	.LifeStyle.Is(LifestyleType.Singleton));
 		}
 	}

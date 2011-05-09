@@ -1,7 +1,7 @@
-﻿using System;
+using System;
 using System.Web.Mvc;
 
-namespace SessionManagement.Controllers
+namespace Example.Web.Controllers
 {
 	public class HomeController : Controller
 	{
