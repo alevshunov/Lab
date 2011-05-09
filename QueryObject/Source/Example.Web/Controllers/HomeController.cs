@@ -1,13 +1,20 @@
 using System;
 using System.Web.Mvc;
+using Example.Queries.Impl;
+using Example.Queries.Infrastructure;
 
 namespace Example.Web.Controllers
 {
-	public class HomeController : Controller
+	public class HomeController : QueryController
 	{
+		public HomeController(IQueryFactory queryFactory) : base(queryFactory)
+		{
+		}
+
 		public ActionResult Index()
 		{
-			ViewBag.Message = "Welcome to ASP.NET MVC!";
+			string message = Query<string>().SingleOrDefault(new GetWelcomeMessageQueryContext());
+			ViewBag.Message = message;
 
 			return View();
 		}
