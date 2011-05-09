@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\QueryController.cs" />
+    <Compile Include="Installers\CommonInstaller.cs" />
     <Compile Include="Installers\FacilitiesInstaller.cs" />
     <Compile Include="Installers\NHibernateInstaller.cs" />
     <Compile Include="Installers\QueriesInstaller.cs" />

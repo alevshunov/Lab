@@ -46,7 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contexts\GetCachedMessageQueryContext.cs" />
     <Compile Include="Contexts\GetWelcomeMessageQueryContext.cs" />
+    <Compile Include="Impl\GetCachedMessageQuery.cs" />
+    <Compile Include="Impl\Caching\CachedQuery.cs" />
+    <Compile Include="Impl\Caching\ICacheContext.cs" />
+    <Compile Include="Impl\Caching\ICacheStrategy.cs" />
+    <Compile Include="Impl\Caching\SingleObjectCacheStrategy.cs" />
     <Compile Include="Impl\GetWelcomeMessageQuery.cs" />
     <Compile Include="Infrastructure\AutoReleaseQueryInterceptor.cs" />
     <Compile Include="Infrastructure\IQuery.cs" />

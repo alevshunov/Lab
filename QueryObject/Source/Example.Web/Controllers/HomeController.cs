@@ -1,7 +1,6 @@
 using System;
 using System.Web.Mvc;
 using Example.Queries.Contexts;
-using Example.Queries.Impl;
 using Example.Queries.Infrastructure;
 
 namespace Example.Web.Controllers
@@ -16,6 +15,9 @@ namespace Example.Web.Controllers
 		{
 			string message = Query<string>().SingleOrDefault(new GetWelcomeMessageQueryContext());
 			ViewBag.Message = message;
+			
+			string cachedMessage = Query<string>().SingleOrDefault(new GetCachedMessageQueryContext());
+			ViewBag.CachedMessage = cachedMessage;
 
 			return View();
 		}
