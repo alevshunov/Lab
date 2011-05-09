@@ -1,5 +1,6 @@
 using System;
 using System.Web.Mvc;
+using Example.Queries.Contexts;
 using Example.Queries.Impl;
 using Example.Queries.Infrastructure;
 

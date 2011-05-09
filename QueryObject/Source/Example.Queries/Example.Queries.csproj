@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contexts\GetWelcomeMessageQueryContext.cs" />
     <Compile Include="Impl\GetWelcomeMessageQuery.cs" />
     <Compile Include="Infrastructure\AutoReleaseQueryInterceptor.cs" />
     <Compile Include="Infrastructure\IQuery.cs" />
@@ -54,7 +55,6 @@
     <Compile Include="Infrastructure\QueryBuilder.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Contexts\" />
     <Folder Include="Results\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

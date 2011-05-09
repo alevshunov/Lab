@@ -1,4 +1,5 @@
 ﻿using System;
+using Example.Queries.Contexts;
 using Example.Queries.Infrastructure;
 
 namespace Example.Queries.Impl
@@ -7,11 +8,7 @@ namespace Example.Queries.Impl
 	{
 		public string Execute(GetWelcomeMessageQueryContext context)
 		{
-			return "Welcome to ASP.NET MVC!";
+			return "Welcome to ASP.NET MVC! (from query)";
 		}
-	}
-
-	public class GetWelcomeMessageQueryContext
-	{
 	}
 }
