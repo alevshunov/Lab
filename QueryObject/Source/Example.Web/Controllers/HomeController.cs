@@ -2,6 +2,7 @@ using System;
 using System.Web.Mvc;
 using Example.Queries.Contexts;
 using Example.Queries.Infrastructure;
+using Example.Queries.Results;
 
 namespace Example.Web.Controllers
 {
@@ -13,11 +14,15 @@ namespace Example.Web.Controllers
 
 		public ActionResult Index()
 		{
-			string message = Query<string>().SingleOrDefault(new GetWelcomeMessageQueryContext());
-			ViewBag.Message = message;
+			int messageId = new Random().Next(1, 4);
 			
-			string cachedMessage = Query<string>().SingleOrDefault(new GetCachedMessageQueryContext());
-			ViewBag.CachedMessage = cachedMessage;
+			var context = new GetWelcomeMessageQueryContext {MessageId = messageId};
+			Message message = Query<Message>().SingleOrDefault(context);
+			ViewBag.Message = message.Text;
+
+			var cachedMessageQueryContext = new GetCachedMessageQueryContext();
+			var cachedMessage = Query<Message>().SingleOrDefault(cachedMessageQueryContext);
+			ViewBag.CachedMessage = cachedMessage.Text;
 
 			return View();
 		}
