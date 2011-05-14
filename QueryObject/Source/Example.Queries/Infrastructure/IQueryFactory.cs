@@ -1,7 +1,7 @@
 namespace Example.Queries.Infrastructure
 {
 	/// <summary>
-	/// 	Интерфейс фабрики для создания query. Реализуется НЕЯВНО с помощью TypedFactoryFacility Castle Windsor
+	/// This interface does not have explicit implementation. Implementation provided by TypedFactory facility of Castle Windsor
 	/// </summary>
 	public interface IQueryFactory
 	{
