@@ -34,14 +34,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Castle.Core">
-      <HintPath>..\..\..\..\Lib\Castle.Windsor\Castle.Core.dll</HintPath>
+      <HintPath>..\..\..\Lib\Castle.Windsor\Castle.Core.dll</HintPath>
     </Reference>
     <Reference Include="Castle.Windsor">
-      <HintPath>..\..\..\..\Lib\Castle.Windsor\Castle.Windsor.dll</HintPath>
+      <HintPath>..\..\..\Lib\Castle.Windsor\Castle.Windsor.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="NHibernate">
-      <HintPath>..\..\..\..\Lib\NHibernate\NHibernate.dll</HintPath>
+      <HintPath>..\..\..\Lib\NHibernate\NHibernate.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web.WebPages" />
